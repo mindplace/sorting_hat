@@ -5,8 +5,8 @@ class QuizzesController < ApplicationController
   end
 
   def create
-    current_user.quizzes.build(quiz_params)
     binding.pry
+    current_user.quizzes.build(quiz_params)
   end
 
   def quiz_params

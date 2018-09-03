@@ -13,6 +13,6 @@
 class User < ApplicationRecord
   has_many :quizzes
 
-  validates :name, :email, presence: true
-  validates :email, uniqueness: { message: 'Someone with this email address has already submitted their quiz, was it you?' }
+  validates :name, :house_choice, :email, presence: true
+  validates_uniqueness_of :email, message: 'Someone with this email address has already submitted their quiz, was it you?'
 end

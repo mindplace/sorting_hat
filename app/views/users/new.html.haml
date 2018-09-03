@@ -1,2 +1,8 @@
 .h1 Hello world!
 .h2 User new page
+
+= simple_form_for @user do |f|
+  = f.input :name
+  = f.select :house_choice, Quiz::HOUSES.map { |house| [house.capitalize, house] }
+  = f.input :email
+  = f.submit 'Start Quiz'
