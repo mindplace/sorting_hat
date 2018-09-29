@@ -12,8 +12,13 @@
 
 class QuizQuestion < ApplicationRecord
   attr_accessor :possible_answers
-  has_one :answer
-  has_one :question
+
+  belongs_to :answer
+  belongs_to :question
 
   belongs_to :quiz
+
+  def text
+    question.text
+  end
 end

@@ -1,1 +1,31 @@
 .h1 Hello Quizzes! New Quiz Page
+
+= simple_form_for @quiz do |f|
+  = f.simple_fields_for :questions do |ff|
+    = ff.input :question_id, as: :hidden
+    = ff.object.text
+
+
+
+
+
+
+
+
+
+
+  -# - @quiz.questions.each do |question|
+  -#   .question_set
+  -#
+  -#     - question.possible_answers.each do |answer|
+  -#       %div= answer.text
+  -#
+  -#     = f.simple_fields_for :question do |q|
+  -#
+  -#       = q.simple_fields_for question.possible_answers do |answer|
+  -#         %span.radio.inline
+  -#           %label
+  -#             %input.radio_buttons.optional{ type: "radio", value: answer.object.id, checked: false, name: "quiz_question['#{question.id}'][answer_id]" }
+  -#             %span.inner-radio-text
+  -#               %span= answer.object.text
+  -#         %br
